@@ -1,0 +1,9 @@
+<TabView androidTabsPosition="bottom">
+  <GridLayout *tabItem="{ title: 'WatchList' }">
+    <page-router-outlet name="watchlistTab"></page-router-outlet>
+  </GridLayout>
+
+  <GridLayout *tabItem="{ title: 'Events' }">
+    <page-router-outlet name="eventsTab"></page-router-outlet>
+  </GridLayout>
+</TabView>

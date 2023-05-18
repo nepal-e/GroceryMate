@@ -1,0 +1,10 @@
+<StackLayout>
+  <Label text="Upcoming Events"></Label>
+  <ListView [items]="events">
+      <ng-template let-event="item">
+          <StackLayout class="event-item">
+              <Label [text]="event"></Label>
+          </StackLayout>
+      </ng-template>
+  </ListView>
+</StackLayout>

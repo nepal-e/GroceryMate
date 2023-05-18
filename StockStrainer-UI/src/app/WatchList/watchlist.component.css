@@ -1,0 +1,13 @@
+.page__content {
+    padding: 20;
+}
+
+.page__content-icon {
+    font-size: 30;
+    margin-bottom: 10;
+}
+
+.page__content-placeholder {
+    font-size: 18;
+    color: #999;
+}
