@@ -1,0 +1,31 @@
+.graph-container {
+    padding: 16;
+  }
+
+  .graph-title {
+    font-size: 20;
+    margin-bottom: 16;
+  }
+
+  .graph-scroll-view {
+    height: 200;
+  }
+
+  .graph-bar-container {
+    flex-direction: row;
+  }
+
+  .graph-bar {
+    flex-direction: column;
+    margin-right: 8;
+    background-color: #007aff;
+    width: 32;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .graph-bar Label {
+    color: white;
+    font-size: 14;
+    margin-top: 4;
+  }

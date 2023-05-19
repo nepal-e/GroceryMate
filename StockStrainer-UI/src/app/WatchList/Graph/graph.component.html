@@ -1,0 +1,18 @@
+<GridLayout>
+    <ActionBar>
+      <Label [text]="ticker"></Label>
+    </ActionBar>
+
+    <StackLayout class="graph-container">
+      <Label text="{{name}}" class="graph-title"></Label>
+      <RadCartesianChart height="400">
+        <CategoricalAxis tkCartesianHorizontalAxis></CategoricalAxis>
+        <LinearAxis tkCartesianVerticalAxis></LinearAxis>
+        <LineSeries tkCartesianSeries
+                    [items]="stockData"
+                    categoryProperty="t"
+                    valueProperty="c">
+        </LineSeries>
+      </RadCartesianChart>
+    </StackLayout>
+  </GridLayout>

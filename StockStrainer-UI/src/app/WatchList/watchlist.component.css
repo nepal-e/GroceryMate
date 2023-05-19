@@ -11,3 +11,19 @@
     font-size: 18;
     color: #999;
 }
+.clickable-label {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+}
+
+.clickable-label:hover {
+  color: darkblue;
+}
+.ticker {
+  font-weight: bold;
+}
+
+.name {
+  font-size: 12px;
+}
