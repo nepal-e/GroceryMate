@@ -27,3 +27,8 @@
 .name {
   font-size: 12px;
 }
+.round-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}

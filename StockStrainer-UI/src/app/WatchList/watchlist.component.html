@@ -4,21 +4,29 @@
   </ActionBar>
 
   <StackLayout class="page__content">
-    <ng-container *ngIf="stocks && stocks.results.length > 0">
-      <ListView [items]="stocks.results">
+    <SearchBar hint="Enter Stock Symbol here ..."
+    [text]="searchString" (textChange)="onTextChanged($event)"
+    (clear)="onClear($event)" (submit)="onSubmit($event)">
+    </SearchBar>
+
+    <ng-container *ngIf="stocks && stocks.length > 0">
+      <ListView [items]="stocks">
         <ng-template let-item="item">
-          <StackLayout [nsRouterLink]="['../graph']">
-            <Label class="ticker" [text]="item.ticker"></Label>
-            <Label class="name" [text]="item.name"></Label>
-            <GraphComponent [ticker]="item.ticker" [name]="item.name"></GraphComponent>
-          </StackLayout>
+          <GridLayout rows="auto, auto, auto" columns="auto, *">
+            <GridLayout row="0" col="1" columns="*, auto" horizontalAlignment="stretch">
+              <Label class="ticker" [text]="item.symbol"></Label>
+              <Button class="round-button" text="+" (tap)="addToWatchlist(item)" horizontalAlignment="right"></Button>
+            </GridLayout>
+            <Label class="name" [text]="item.name" row="1" col="1" colSpan="2"></Label>
+            <Label class="exchangeName" [text]="item.exchangeName" row="2" col="1" colSpan="2"></Label>
+          </GridLayout>
         </ng-template>
       </ListView>
     </ng-container>
 
-    <ng-container *ngIf="!stocks || stocks.results.length === 0">
+    <ng-container *ngIf="!stocks || stocks.length === 0">
       <Label class="page__content-icon fas" text="&#xf002;"></Label>
-      <Label class="page__content-placeholder" text="<!-- Oops no stocks in the watchlist!-->"></Label>
+      <Label class="page__content-placeholder" text="Oops no stocks in the watchlist!"></Label>
     </ng-container>
   </StackLayout>
 </GridLayout>

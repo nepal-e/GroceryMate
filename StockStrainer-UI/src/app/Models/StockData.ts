@@ -1,41 +1,38 @@
-export class StockData {
-  ticker: string;
-  queryCount: number;
-  resultsCount: number;
-  adjusted: boolean;
-  results: StockResult[];
-  status: string;
-  request_id: string;
-  count: number;
-}
 
-export class StockResult {
-  v: number;
-  vw: number;
-  o: number;
-  c: number;
-  h: number;
-  l: number;
-  t: number;
-  n: number;
+export class CompanyInfo {
+  symbol: string;
+  exchange: string;
+  exchangeSuffix: string;
+  exchangeName: string;
+  exchangeSegment: string;
+  exchangeSegmentName: string;
+  name: string;
+  type: string;
+  iexId: string;
+  region: string;
+  currency: string;
+  isEnabled: boolean;
+  figi: string;
+  cik: string;
+  lei: string;
 }
 
 export class Stock {
   results:Ticker[];
 }
-export class Ticker{
-  ticker: string;
-  name: string;
-  market: string;
-  locale: string;
-  primary_exchange?: string;
-  type: string;
-  active: boolean;
-  currency_name: string;
-  cik?: string;
-  composite_figi?: string;
-  share_class_figi?: string;
-  last_updated_utc: string;
+export class Ticker {
+  date: string;
+  minute: string;
+  label: string;
+  high: number;
+  low: number;
+  open: number;
+  close: number;
+  average: number;
+  volume: number;
+  notional: number;
+  numberOfTrades: number;
 }
+
 
 
