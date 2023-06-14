@@ -13,7 +13,14 @@
       <ListView [items]="stocks">
         <ng-template let-item="item">
           <GridLayout rows="auto, auto, auto" columns="auto, *">
-            <GridLayout row="0" col="1" columns="*, auto" horizontalAlignment="stretch">
+            <GridLayout
+              row="0"
+              col="1"
+              columns="*, auto"
+              horizontalAlignment="stretch"
+              [nsRouterLink]="['../graph']"
+              [queryParams]="{ name: item.name, symbol: item.symbol }"
+            >
               <Label class="ticker" [text]="item.symbol"></Label>
               <Button class="round-button" text="+" (tap)="addToWatchlist(item)" horizontalAlignment="right"></Button>
             </GridLayout>
@@ -23,6 +30,7 @@
         </ng-template>
       </ListView>
     </ng-container>
+
 
     <ng-container *ngIf="!stocks || stocks.length === 0">
       <Label class="page__content-icon fas" text="&#xf002;"></Label>
