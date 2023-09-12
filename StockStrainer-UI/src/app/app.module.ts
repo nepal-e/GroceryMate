@@ -1,16 +1,21 @@
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core'
-import { NativeScriptModule } from '@nativescript/angular'
-import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module'
-import { AppComponent } from './app.component'
-// import { ItemsComponent } from './item/items.component'
-// import { ItemDetailComponent } from './item/item-detail.component'
-// import {EventsComponent} from './Events/events.component'
+import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
+import { NativeScriptModule } from "@nativescript/angular";
+import { HttpClientModule } from "@angular/common/http";
+import { NativeScriptFormsModule } from "@nativescript/angular";
+import { AppComponent } from "./app.component";
+import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
+import { GroceryComponent } from "./groceries/grocery/grocery.component";
+import { GroceryListComponent } from "./groceries/groceryList/grocery-list.component";
 
 @NgModule({
   bootstrap: [AppComponent],
-  imports: [NativeScriptModule, AppRoutingModule,HttpClientModule],
-  declarations: [AppComponent],
+  imports: [
+    NativeScriptModule,
+    HttpClientModule,
+    NativeScriptUISideDrawerModule,
+    NativeScriptFormsModule,
+  ],
+  declarations: [AppComponent, GroceryComponent, GroceryListComponent],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],
 })

@@ -1,9 +1,26 @@
-<TabView androidTabsPosition="bottom">
-  <GridLayout *tabItem="{ title: 'WatchList' }">
-    <page-router-outlet name="watchlistTab"></page-router-outlet>
-  </GridLayout>
+<!-- <RadSideDrawer #drawer>
+  Drawer content goes here (menu items, user profile, etc.)
+  <StackLayout tkDrawerContent class="side-drawer">
+    <Label text="Drawer Content"></Label>
+    <Button text="Logout" class="btn"></Button>
+  </StackLayout>
 
-  <GridLayout *tabItem="{ title: 'Events' }">
-    <page-router-outlet name="eventsTab"></page-router-outlet>
-  </GridLayout>
-</TabView>
+  <StackLayout tkMainContent>
+    <TabView androidTabsPosition="bottom">
+      <GridLayout *tabItem="{ title: 'Groceries' }">
+        <page-router-outlet name="grocerylistTab"></page-router-outlet>
+      </GridLayout>
+
+      <GridLayout *tabItem="{ title: 'Budget' }">
+        <page-router-outlet name="eventsTab"></page-router-outlet>
+      </GridLayout>
+      <GridLayout *tabItem="{ title: 'Debts' }">
+        <page-router-outlet name="eventsTab"></page-router-outlet>
+      </GridLayout>
+    </TabView>
+  </StackLayout>
+</RadSideDrawer> -->
+<StackLayout>
+  <ns-grocery (input)="onGroceryInput($event)"></ns-grocery>
+  <ns-grocery-list [groceries]="activeGroceries"></ns-grocery-list>
+</StackLayout>

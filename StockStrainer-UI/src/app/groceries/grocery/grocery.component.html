@@ -1,0 +1,8 @@
+<StackLayout justifyContent="space-between">
+  <TextField
+    class="form-control"
+    hint="Enter the grocery name"
+    [(ngModel)]="groceryDis"
+  ></TextField>
+  <button (tap)="onSetGrocery()" text="Submit"></button>
+</StackLayout>
